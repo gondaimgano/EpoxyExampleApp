@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+    <com.google.android.material.card.MaterialCardView
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+            <ImageView
+                    android:src="@drawable/ic_launcher_background"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titleTask"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    tools:text="Event probleme"
+                    android:text="Title"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/messageTask"
+                    android:layout_width="wrap_content"
+                    tools:text="Call Issue"
+                    android:text="Description"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
