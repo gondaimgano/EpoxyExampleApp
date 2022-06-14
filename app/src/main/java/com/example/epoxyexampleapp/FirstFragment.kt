@@ -27,7 +27,6 @@ class FirstFragment : Fragment() {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,41 +35,40 @@ class FirstFragment : Fragment() {
         _binding?.mainLayoutView?.withModels {
 
             itemTitle {
-                id("fish")
-                text("Fish")
+                id("activity-id")
+                text("Activities")
             }
             // Carousel Item
-            val carouselItemModels = listOf(0,1,2,3,4,5).map { currentItem ->
+            val carouselItemModels = listOf(0, 1, 2, 3, 4, 5).map { currentItem ->
 
-                  TaskCarouselModel_().id(currentItem).text("Hello World")
+                TaskCarouselModel_().id(currentItem).text("Hello World")
             }
-
             // Carousel
             // This extension function come with epoxy
             carousel {
+
                 id("car")
-               models(carouselItemModels)
+                hasFixedSize(true)
+                models(carouselItemModels)
+
             }
-
-
-
-
             itemTitle {
-                id("fish")
-                text("Fish")
+                id("task-id")
+                text("Tasks")
             }
             // Task title
             // item_title.xml
 
-               listOf(0,1,2,34,5,6).forEach {
-                   taskCarousel {
-                       id(it)
-                       text("Task $it")
+            val itemModels = listOf(0, 1, 2, 34, 5, 6).map { item ->
+                ItemTaskModel_().id(item).title("Task $item").description("A lot of work")
 
-                   }
-               }
-            // Tasks
+            }
 
+            carousel {
+                id("Task found")
+                models(itemModels)
+            }
+        // Tasks
         }
     }
 
