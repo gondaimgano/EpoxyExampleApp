@@ -68,6 +68,33 @@ class FirstFragment : Fragment() {
                 id("Task found")
                 models(itemModels)
             }
+            itemTitle {
+                id("Contact Details")
+                text("Contact Details")
+            }
+            itemContact {
+                id("Contact stuff")
+                fax("+27 64 690 6565")
+                email("gondaimgano@gmail.com")
+                mobile("0772 235 083")
+            }
+
+            itemTitle {
+                id("task-id")
+                text("Overview")
+            }
+            // Task title
+            // item_title.xml
+
+            val itemModels1 = listOf(0, 1, 2, 34, 5, 6).map { item ->
+                ItemTaskModel_().id(item).title("Task $item").description("A lot of work")
+
+            }
+
+            carousel {
+                id("Task found")
+                models(itemModels1)
+            }
         // Tasks
         }
     }
