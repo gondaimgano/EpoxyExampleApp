@@ -1,6 +1,7 @@
 package com.example.epoxyexampleapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,6 +60,7 @@ class FirstFragment : Fragment() {
             // Task title
             // item_title.xml
 
+
             val itemModels = listOf(0, 1, 2, 34, 5, 6).map { item ->
                 ItemTaskModel_().id(item).title("Task $item").description("A lot of work")
 
@@ -72,6 +74,23 @@ class FirstFragment : Fragment() {
                 id("Contact Details")
                 text("Contact Details")
             }
+         val username=  ItemTextField_().id("Hello").hint("Username")
+            username.addTo(this)
+            val password = ItemPasswordModel_().id("password").hint("Password")
+            password.addTo(this)
+
+            val dropdown = ItemDropDownModel_().id("gender").addTo(this)
+
+            itemButton {
+                id("button")
+                label("Login")
+                listener { _ ->
+                    Log.d("Gondai",username.getText()+password.getText())
+
+                }
+
+            }
+
             itemContact {
                 id("Contact stuff")
                 fax("+27 64 690 6565")
